@@ -29,6 +29,8 @@ namespace BookApp
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             //app.Use(async (Context, next) =>
             //{
             //    await Context.Response.WriteAsync("Hello from 1st MiddleWare");
