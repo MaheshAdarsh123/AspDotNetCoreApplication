@@ -17,6 +17,10 @@ namespace BookApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+#if DEBUG
+            //The above condition is called Pre Processor. When you change appn to release mode, below code will not work
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,6 +33,7 @@ namespace BookApp
                 app.UseDeveloperExceptionPage();
             }
 
+            //Added in order to use static foles such as images, jquery, js files
             app.UseStaticFiles();
 
             //app.Use(async (Context, next) =>

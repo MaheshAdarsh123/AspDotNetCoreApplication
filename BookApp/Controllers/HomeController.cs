@@ -16,5 +16,9 @@ namespace BookApp.Controllers
         {
             return View();
         }
+        public ViewResult ContactUsMain()
+        {
+            return View();
+        }
     }
 }
